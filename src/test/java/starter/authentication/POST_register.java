@@ -1,11 +1,11 @@
 package starter.authentication;
 
-import com.github.javafaker.Faker;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import org.json.JSONObject;
 
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
+import static org.hamcrest.Matchers.equalTo;
 
 public class POST_register {
     public String valid_endpoint_register = "https://altashop-api.fly.dev/api/auth/register";
@@ -16,41 +16,59 @@ public class POST_register {
         return valid_endpoint_register;
     }
 
-    @Step("user send POST HTTP request with valid endpoint for register")
+    @Step("send POST HTTP request with valid endpoint for register")
     public void sendPOSTHTTPRequestWithValidEndpointForRegister(){
-        Faker faker = new Faker();
-        String fullname = faker.name().fullName();
-        String body =
-                "{\"email\": " + fullname + "\"@gmail.com\"" + ",\n" +
-                "\"password\": " + fullname + "\"123\"" + ",\n" +
-                "\"fullname\": " + fullname + "\n}";
+        String body = "{\"email\": \"iqbal@gmail.com\", \"password\": \"iqbal123\", \"fullname\": \"Iqbal Ramadhan\"}";
 
         JSONObject reqBody = new JSONObject(body);
 
         SerenityRest.given().header("Content-Type", "application/json").body(reqBody.toString()).post(setPostValidEndpointForRegister());
     }
 
-    @Step("user received POST HTTP response code 200 for register")
+    @Step("received POST HTTP response code 200 for register")
     public void validateHTTPResponseCode200ForRegister(){
         restAssuredThat(response -> response.statusCode(200));
     }
 
-    @Step("user set POST invalid endpoint for register")
+    @Step("set POST invalid endpoint for register")
     public String setPostInvalidEndpointForRegister(){
         return invalid_endpoint_register;
     }
 
-    @Step("user send POST HTTP request with invalid endpoint for register")
+    @Step("send POST HTTP request with invalid endpoint for register")
     public void sendPOSTHTTPRequestWithInvalidEndpointForRegister(){
-        String body = "{\"email\":\"kevin@gmail.com\", \"password\": \"kevin123\", \"fullname\": \"Kevin Aprilio\" }";
+        String body = "{\"email\": \"kevin@gmail.com\", \"password\": \"kevin123\", \"fullname\": \"Kevin Aprilio\"}";
 
         JSONObject reqBody = new JSONObject(body);
 
         SerenityRest.given().header("Content-Type", "application/json").body(reqBody.toString()).post(setPostInvalidEndpointForRegister());
     }
 
-    @Step("user received POST HTTP responses code 404 for register")
+    @Step("received POST HTTP responses code 404 for register")
     public void validateHTTPResponseCode404WithInvalidEndpointForRegister(){
         restAssuredThat(response -> response.statusCode(404));
+    }
+
+    @Step("send POST HTTP request with empty request body for register")
+    public void sendPOSTHTTPRequestWithEmptyRequestBodyForRegister(){
+        String body = "{ }";
+
+        JSONObject reqBody = new JSONObject(body);
+
+        SerenityRest.given().header("Content-Type", "application/json").body(reqBody.toString()).post(setPostValidEndpointForRegister());
+    }
+
+    @Step("received POST HTTP response code 400 for register with empty request body")
+    public void validateHTTPResponseCode400ForRegisterWithEmptyRequestBody(){
+        restAssuredThat(response -> response.statusCode(400));
+    }
+
+    @Step("send POST HTTP request for register")
+    public void sendPOSTHTTPRequestForRegister(){
+        String body = "{\"email\": \"vidi@gmail.com\", \"password\": \"vidi123\", \"fullname\": \"Vidi Aldiano\"}";
+
+        JSONObject reqBody = new JSONObject(body);
+
+        SerenityRest.given().header("Content-Type", "application/json").body(reqBody.toString()).post(setPostValidEndpointForRegister());
     }
 }

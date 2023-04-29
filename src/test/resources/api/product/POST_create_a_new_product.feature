@@ -1,7 +1,7 @@
-Feature: POST - add new product
+Feature: POST - create a new product
   As a user
   I want to see list of products
-  So that i can add new product
+  So that i can create new product
 
   @TCP2.1
   Scenario: POST - as a user i want to create a new product with valid endpoint

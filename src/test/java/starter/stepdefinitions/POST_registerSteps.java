@@ -1,5 +1,6 @@
 package starter.stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -37,5 +38,20 @@ public class POST_registerSteps {
     @Then("user received POST HTTP responses code {int} for register")
     public void userReceivedPOSTHTTPResponsesCodeForRegister(int arg0) {
         post_register.validateHTTPResponseCode404WithInvalidEndpointForRegister();
+    }
+
+    @When("user send POST HTTP request with empty request body for register")
+    public void userSendPOSTHTTPRequestWithEmptyRequestBodyForRegister() {
+        post_register.sendPOSTHTTPRequestWithEmptyRequestBodyForRegister();
+    }
+
+    @Then("user received POST HTTP response code {int} for register with empty request body")
+    public void userReceivedPOSTHTTPResponseCodeForRegisterWithEmptyRequestBody(int arg0) {
+        post_register.validateHTTPResponseCode400ForRegisterWithEmptyRequestBody();
+    }
+
+    @When("user send POST HTTP request for register")
+    public void userSendPOSTHTTPRequestForRegister() {
+        post_register.sendPOSTHTTPRequestForRegister();
     }
 }
