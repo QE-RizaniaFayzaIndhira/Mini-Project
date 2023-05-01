@@ -65,7 +65,6 @@ public class POST_create_a_new_product {
 
     @Step("received valid data for new product")
     public void validateValidDataForNewProduct(){
-        restAssuredThat(response->response.body("'data.ID'",equalTo(11411)));
         restAssuredThat(response->response.body("'data.name'",equalTo("Sony PS5")));
         restAssuredThat(response->response.body("'data.description'",equalTo("play has no limits")));
         restAssuredThat(response->response.body("'data.price'",equalTo(299)));

@@ -41,6 +41,6 @@ public class GET_product_comments {
     }
     @Step("received valid data for product comments")
     public void validateValidDataForProductComments(){
-        restAssuredThat(response->response.body("'data[0].content'",equalTo("the games are great including Gran Turismo 7 but sadly GT4 is much better")));
+        restAssuredThat(response->response.body("'data.content'",equalTo("the games are great including Gran Turismo 7 but sadly GT4 is much better")));
     }
 }
