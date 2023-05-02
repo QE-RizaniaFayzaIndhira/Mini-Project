@@ -10,12 +10,12 @@ import starter.authentication.GET_user_information;
 public class GET_user_informationSteps {
     @Steps
     GET_user_information get_user_information;
-    @Given("user set GET valid endpoint for user information")
+    @When("user set GET valid endpoint for user information")
     public void userSetGETValidEndpointForUserInformation() {
         get_user_information.setGETValidEndpointForUserInformation();
     }
 
-    @When("user send GET HTTP request with valid endpoint for user information")
+    @And("user send GET HTTP request with valid endpoint for user information")
     public void userSendGETHTTPRequestWithValidEndpointForUserInformation() {
         get_user_information.sendGETHTTPRequestWithValidEndpointForUserInformation();
     }
@@ -25,12 +25,12 @@ public class GET_user_informationSteps {
         get_user_information.validateGETHTTPResponseCode200ForUserInformation();
     }
 
-    @Given("user set GET invalid endpoint for user information")
+    @When("user set GET invalid endpoint for user information")
     public void userSetGETInvalidEndpointForUserInformation() {
         get_user_information.setGETInvalidEndpointForUserInformation();
     }
 
-    @When("user send GET HTTP request with invalid endpoint for user information")
+    @And("user send GET HTTP request with invalid endpoint for user information")
     public void userSendGETHTTPRequestWithInvalidEndpointForUserInformation() {
         get_user_information.sendGETHTTPRequestWithInvalidEndpointForUserInformation();
     }

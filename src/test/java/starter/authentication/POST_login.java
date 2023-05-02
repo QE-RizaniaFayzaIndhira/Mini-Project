@@ -17,7 +17,7 @@ public class POST_login {
 
     @Step("send POST HTTP request for login")
     public void sendPOSTHTTPRequestForLogin(){
-        String body = "{\"email\":\"someone@mail.com\", \"password\": \"123123\" }";
+        String body = "{\"email\":\"riza@gmail.com\", \"password\": \"riza123\" }";
 
         JSONObject reqBody = new JSONObject(body);
 
@@ -36,7 +36,7 @@ public class POST_login {
 
     @Step("user send POST HTTP request with invalid endpoint for login")
     public void sendPOSTHTTPRequestWithInvalidEndpointForLogin(){
-        String body = "{\"email\":\"someone@mail.com\", \"password\": \"123123\" }";
+        String body = "{\"email\":\"riza@gmail.com\", \"password\": \"riza123\" }";
 
         JSONObject reqBody = new JSONObject(body);
 

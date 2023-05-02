@@ -41,8 +41,8 @@ public class GET_product_by_ID {
     }
     @Step("received valid data for product by ID")
     public void validateValidDataForProductByID(){
-        restAssuredThat(response->response.body("'data.name'",equalTo("HP core i5")));
-        restAssuredThat(response->response.body("'data.description'",equalTo("play has no limits")));
-        restAssuredThat(response->response.body("'data.price'",equalTo(6000000)));
+        restAssuredThat(response->response.body("data.Name",equalTo("HP core i5")));
+        restAssuredThat(response->response.body("data.Description",equalTo("play has no limits")));
+        restAssuredThat(response->response.body("data.Price",equalTo(6000000)));
     }
 }

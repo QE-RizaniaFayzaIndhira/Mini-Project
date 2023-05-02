@@ -18,7 +18,7 @@ public class POST_register {
 
     @Step("send POST HTTP request with valid endpoint for register")
     public void sendPOSTHTTPRequestWithValidEndpointForRegister(){
-        String body = "{\"email\": \"iqbal@gmail.com\", \"password\": \"iqbal123\", \"fullname\": \"Iqbal Ramadhan\"}";
+        String body = "{\"email\": \"kuma@gmail.com\", \"password\": \"kuma123\", \"fullname\": \"Kuma\"}";
 
         JSONObject reqBody = new JSONObject(body);
 
@@ -65,7 +65,7 @@ public class POST_register {
 
     @Step("send POST HTTP request for register")
     public void sendPOSTHTTPRequestForRegister(){
-        String body = "{\"email\": \"vidi@gmail.com\", \"password\": \"vidi123\", \"fullname\": \"Vidi Aldiano\"}";
+        String body = "{\"email\": \"chimmy@gmail.com\", \"password\": \"chimmy123\", \"fullname\": \"Chimmy\"}";
 
         JSONObject reqBody = new JSONObject(body);
 

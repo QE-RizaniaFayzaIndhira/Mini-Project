@@ -41,7 +41,7 @@ public class GET_category_by_ID {
     }
     @Step("received valid data for category by ID")
     public void validateValidDataForCategoryByID(){
-        restAssuredThat(response->response.body("'data.name'",equalTo("gaming")));
-        restAssuredThat(response->response.body("'data.description'",equalTo("for gaming purposes")));
+        restAssuredThat(response->response.body("data.Name",equalTo("gaming")));
+        restAssuredThat(response->response.body("data.Description",equalTo("for gaming purposes")));
     }
 }

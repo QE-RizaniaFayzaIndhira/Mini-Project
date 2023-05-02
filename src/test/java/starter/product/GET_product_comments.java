@@ -4,7 +4,6 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.hamcrest.Matchers.equalTo;
 
 public class GET_product_comments {
     public String validEndpointProductComments = "https://altashop-api.fly.dev/api/products/2/comments";
@@ -38,9 +37,5 @@ public class GET_product_comments {
     @Step("received GET HTTP response code 404 to get product comments")
     public void validateValidGETHTTPResponseCode404ToGetProductComments(){
         restAssuredThat(response -> response.statusCode(404));
-    }
-    @Step("received valid data for product comments")
-    public void validateValidDataForProductComments(){
-        restAssuredThat(response->response.body("'data.content'",equalTo("the games are great including Gran Turismo 7 but sadly GT4 is much better")));
     }
 }

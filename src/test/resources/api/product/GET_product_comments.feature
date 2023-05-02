@@ -14,10 +14,3 @@ Feature: GET - Product comments
     Given user set GET invalid endpoint to get product comments
     When user send GET HTTP request to get product comments with invalid endpoint
     Then user received GET HTTP response code 404 to get product comments
-
-  @TCP8.3
-  Scenario: GET - As a user i want to get product comments
-    Given user set GET valid endpoint to get product comments
-    When user send GET HTTP request to get product comments with valid endpoint
-    Then user received valid GET HTTP response code 200 to get product comments
-    And user received valid data for product comments

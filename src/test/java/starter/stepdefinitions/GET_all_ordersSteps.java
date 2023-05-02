@@ -1,5 +1,7 @@
 package starter.stepdefinitions;
 
+import io.cucumber.java.bs.A;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,12 +11,12 @@ import starter.orders.GET_all_orders;
 public class GET_all_ordersSteps {
     @Steps
     GET_all_orders get_all_orders;
-    @Given("user set GET valid endpoint for all orders")
+    @When("user set GET valid endpoint for all orders")
     public void userSetGETValidEndpointForAllOrders() {
         get_all_orders.setGETValidEndpointForAllOrders();
     }
 
-    @When("user send GET HTTP request with valid endpoint for all orders")
+    @And("user send GET HTTP request with valid endpoint for all orders")
     public void userSendGETHTTPRequestWithValidEndpointForAllOrders() {
         get_all_orders.sendGETHTTPRequestWithValidEndpointForAllOrders();
     }
@@ -24,12 +26,12 @@ public class GET_all_ordersSteps {
         get_all_orders.validateGETHTTPResponseCode200ForAllOrders();
     }
 
-    @Given("user set GET invalid endpoint for all orders")
+    @When("user set GET invalid endpoint for all orders")
     public void userSetGETInvalidEndpointForAllOrders() {
         get_all_orders.setGETInvalidEndpointForAllOrders();
     }
 
-    @When("user send GET HTTP request with invalid endpoint for all orders")
+    @And("user send GET HTTP request with invalid endpoint for all orders")
     public void userSendGETHTTPRequestWithInvalidEndpointForAllOrders() {
         get_all_orders.sendGETHTTPRequestWithInvalidQueryEndpointForAllOrders();
     }

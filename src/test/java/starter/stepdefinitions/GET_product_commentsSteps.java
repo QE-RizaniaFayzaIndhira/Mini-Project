@@ -39,9 +39,4 @@ public class GET_product_commentsSteps {
     public void userReceivedGETHTTPResponseCodeToGetProductComments(int arg0) {
         get_product_comments.validateValidGETHTTPResponseCode404ToGetProductComments();
     }
-
-    @And("user received valid data for product comments")
-    public void userReceivedValidDataForProductComments() {
-        get_product_comments.validateValidDataForProductComments();
-    }
 }

@@ -10,12 +10,12 @@ import starter.product.POST_create_a_comment_for_product;
 public class POST_create_a_comment_for_productSteps {
     @Steps
     POST_create_a_comment_for_product post_create_a_comment_for_product;
-    @Given("user set POST valid endpoint for create comment product")
+    @When("user set POST valid endpoint for create comment product")
     public void userSetPOSTValidEndpointForCreateCommentProduct() {
         post_create_a_comment_for_product.setPostValidEndpointForCreateCommentProduct();
     }
 
-    @When("user send POST HTTP request for create comment product")
+    @And("user send POST HTTP request for create comment product")
     public void userSendPOSTHTTPRequestForCreateCommentProduct() {
         post_create_a_comment_for_product.sendPOSTHTTPRequestForCreateCommentProduct();
     }
@@ -25,12 +25,12 @@ public class POST_create_a_comment_for_productSteps {
         post_create_a_comment_for_product.validateHTTPResponseCode200ForCreateCommentProduct();
     }
 
-    @Given("user set POST invalid endpoint for create comment product")
+    @When("user set POST invalid endpoint for create comment product")
     public void userSetPOSTInvalidEndpointForCreateCommentProduct() {
         post_create_a_comment_for_product.setPostEndpointWithInvalidEndpointForCreateCommentProduct();
     }
 
-    @When("user send POST HTTP request with invalid endpoint for create comment product")
+    @And("user send POST HTTP request with invalid endpoint for create comment product")
     public void userSendPOSTHTTPRequestWithInvalidEndpointForCreateCommentProduct() {
         post_create_a_comment_for_product.sendPOSTHTTPRequestWithInvalidEndpointForCreateCommentProduct();
     }

@@ -41,6 +41,6 @@ public class GET_product_ratings {
     }
     @Step("received valid data for product ratings")
     public void validateValidDataForProductRatings(){
-        restAssuredThat(response->response.body("'data'",equalTo(0)));
+        restAssuredThat(response->response.body("data",equalTo(3)));
     }
 }

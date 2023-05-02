@@ -64,7 +64,7 @@ public class POST_create_a_category {
     }
     @Step("received valid data for new category")
     public void validateValidDataForNewCategory(){
-        restAssuredThat(response->response.body("'data.name'",equalTo("gaming")));
-        restAssuredThat(response->response.body("'data.description'",equalTo("for gaming purposes")));
+        restAssuredThat(response->response.body("data.Name",equalTo("gaming")));
+        restAssuredThat(response->response.body("data.Description",equalTo("for gaming purposes")));
     }
 }
